@@ -1,5 +1,5 @@
 org: culmi05
-service: api-web-scraping-hk
+service: api-web-scraping-hk-2
 
 provider:
   name: aws
@@ -11,8 +11,8 @@ provider:
     role: arn:aws:iam::637458465934:role/LabRole
 
 functions:
-  scrape_table_hk:
-    handler: scrap_table_hk.lambda_handler  # Asegúrarse de que el nombre del archivo y la función coincidan
+  scrape_table_hk_2:
+    handler: scrap_table_hk_2.lambda_handler  # Asegúrarse de que el nombre del archivo y la función coincidan
     package:
       include:
         - ./**  # Incluir todo el contenido del directorio
@@ -25,10 +25,10 @@ functions:
 
 resources:
   Resources:
-    TablaWebScrappingHk:
+    TablaWebScrappingHk2:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: TablaWebScrappingHk
+        TableName: TablaWebScrappingHk2
         AttributeDefinitions:
           - AttributeName: id
             AttributeType: S
